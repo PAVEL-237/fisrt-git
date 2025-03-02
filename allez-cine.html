@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Allez-cine</title>
+    <style>
+        :root {
+            --primary-color: orangered;
+            --secondary-color: orange;
+            --text-color: white;
+            --background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-image: url('nav.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 10px;
+            background-color: var(--background-color);
+        }
+
+        .site-title {
+            font-size: 2.5rem;
+            z-index: 1;
+            margin-right: 20px;
+        }
+
+        .nav-link {
+            color: var(--text-color);
+            margin-right: 20px;
+        }
+
+        .dropdown-menu {
+            background-color: var(--secondary-color);
+        }
+
+        .main-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--text-color);
+        }
+
+        .watch-trailer-btn {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            margin-top: 20px;
+        }
+
+        .register {
+            height: 50px;
+            background-color: var(--primary-color);
+        
+            padding: 10px 0;
+        }
+
+        .film, .Movies {
+            margin-top: 40px;
+            margin-left: 70px;
+            margin-right: 70px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; 
+        }
+
+        .card {
+            width: 18rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .video-preview {
+            width: 18rem;
+            height: 18rem; 
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+            border-radius: 8px; 
+        }
+
+        .video-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; 
+            margin-top: 40px;
+            margin-left: 70px;
+            margin-right: 70px;
+        }
+        .footer{
+            height: 300px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <section class="header" id="header">
+        <nav class="navbar">
+            <h1 class="site-title">
+                <span style="color: var(--primary-color);">allez</span>
+                <span style="color: beige;">cine</span>
+            </h1>
+            <div class="dropdown" style="margin-right: 20px;">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Genre
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Comedy</a></li>
+                    <li><a class="dropdown-item" href="#">Western</a></li>
+                    <li><a class="dropdown-item" href="#">Fiction</a></li>
+                </ul>
+            </div>
+            <input type="text" class="form-control search-input" placeholder="Recherche..." style="width: 200px;">
+            <a class="nav-link active" aria-current="page" href="#">CONTACT</a>
+        </nav>
+        <div class="main-title">
+            <h1>Latest Online Movies</h1>
+            <button class="btn watch-trailer-btn">WATCH TRAILER</button>
+        </div>
+    </section>
+    <section class="register" id="register">
+        <span>(+000) 009 455 4088</span>
+        <button class="btn btn-dark"> REGISTER</button>
+        <button class="btn btn-dark">LOGIN</button>
+    </section>
+
+
+    <section class="film" id="film">
+        <div class="card">
+            <img src="BAD-MOMS-2-NL.jpg" class="card-img-top" alt="Film 1">
+            <div class="card-body">
+                <p class="card-text">BAD MOMS.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="BFG.jpg" class="card-img-top" alt="Film 1">
+            <div class="card-body">
+                <p class="card-text">BFG</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="CS.jpg" class="card-img-top" alt="Film 1">
+            <div class="card-body">
+                <p class="card-text">CS</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="GOD COMPASSS.jpg" class="card-img-top" alt="Film 1">
+            <div class="card-body">
+                <p class="card-text">GOD CPMPASS</p>
+            </div>
+        </div>
+    </section>
+    <section class="featured" id="featured">
+        <h2 style="margin-top: 70px;">Featured Movies</h2>
+        <div style="display: flex; gap: 10px;">
+            <button class="btn btn-outline-primary">All</button>
+            <button class="btn btn-outline-primary">Action</button>
+            <button class="btn btn-outline-primary">Policiers</button>
+        </div>
+        <div class="Movies">
+            <div class="card">
+                <img src="GREATER.webp" class="card-img-top" alt="Featured Movie 1">
+                <div class="card-body">
+                    <p class="card-text">GREATER</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="ISRAA 88.jpg" class="card-img-top" alt="Featured Movie 2">
+                <div class="card-body">
+                    <p class="card-text">ISRAA 88 </p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="JAON.jpg" class="card-img-top" alt="Featured Movie 3">
+                <div class="card-body">
+                    <p class="card-text">JASON BOURNE</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="nav.jpg" class="card-img-top" alt="Featured Movie 4">
+                <div class="card-body">
+                    <p class="card-text">xmen</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="RESORT.jpg" class="card-img-top" alt="Featured Movie 5">
+                <div class="card-body">
+                    <p class="card-text">REZORT</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="underwater-light-rays-stockcake.jpg" class="card-img-top" alt="Featured Movie 6">
+                <div class="card-body">
+                    <p class="card-text">ATTACK</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="WAR DOG.webp" class="card-img-top" alt="Featured Movie 7">
+                <div class="card-body">
+                    <p class="card-text">WAR DOGS</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="xmen.jpg"card-body>
+                    <p class="card-text">xmen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="serie" id="serie">
+        <h2 style="margin-top: 70px;">Featured Series</h2>
+        <div style="display: flex; gap: 10px;">
+            <button class="btn btn-outline-primary">All</button>
+            <button class="btn btn-outline-primary">Action</button>
+            <button class="btn btn-outline-primary">Policiers</button>
+        </div>
+        <div class="Movies">
+            <div class="card">
+                <img src="GREATER.webp" class="card-img-top" alt="Featured Serie 1">
+                <div class="card-body">
+                    <p class="card-text">GREATER</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="3432270.webp" class="card-img-top" alt="Featured Serie 2">
+                <div class="card-body">
+                    <p class="card-text">ONE PEACE</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="448967.jpg" class="card-img-top" alt="Featured Serie 3">
+                <div class="card-body">
+                    <p class="card-text">TENGACHI</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="BFG.jpg" class="card-img-top" alt="Featured Serie 4">
+                <div class="card-body">
+                    <p class="card-text">BFG</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="CS.jpg" class="card-img-top" alt="Featured Serie 5">
+                <div class="card-body">
+                    <p class="card-text">CS</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="BAD-MOMS-2-NL.jpg" class="card-img-top" alt="Featured Serie 6">
+                <div class="card-body">
+                    <p class="card-text">BAD MOMS</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="GOD COMPASSS.jpg" class="card-img-top" alt="Featured Serie 7">
+                <div class="card-body">
+                    <p class="card-text">GOD COMPASSS</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="GREATER.webp" class="card-img-top" alt="Featured Serie 8">
+                <div class="card-body">
+                    <p class="card-text">GREATER</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="shop" id="shop" style="margin-bottom: 15px;">
+        <h2 style="margin-top: 70px; margin-left: 100px;">SHOP MOVIES</h2>
+        <div class="container">
+            <div class="row g-4">
+            </div>
+        </div>
+    </section>
+    <section class="video-section">
+        <div class="video-preview">
+            <h4>Zone de Visionnage</h4>
+        </div>
+        <div class="card">
+            <img src="ISRAA 88.jpg" class="card-img-top" alt="Film 1">
+            <div class="card-body">
+                <p class="card-text">ISRAA</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="CONTACT">
+        <section id="contact" style="margin: 50px;">
+            <h2>Contactez-nous</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nom</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+        </section>
+        
+
+    </section>
+    <section class="footer" id="footer"></section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">Inscription</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="registerName" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="registerName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="registerEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerPassword" class="form-label">Mot de passe</label>
+                        <input type="password" class="form-control" id="registerPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelector('.register .btn-dark:nth-child(2)').addEventListener('click', function() {
+        var registerModal = new bootstrap.Modal(document.getElementById('registerModal'));
+        registerModal.show();
+    });
+</script>
+</body>
+</html>
